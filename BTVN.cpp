@@ -1,23 +1,23 @@
 ﻿#include <iostream>
 using namespace std;
 
-void nhap(int A[], int N) {
-    for (int i = 0; i < N; i++) {
-        cin >> A[i];
+void nhap(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
 }
-void xuat(int A[], int N) {
-    for (int i = 0; i < N; i++) {
-        cout << A[i] << " ";
+void xuat(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
     }
     cout << endl;
 }
-void tim(int A[], int n) {
+void tim(int a[], int n) {
     int k = 1, arr[50] = { 0 }, tam;
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
-            if (A[i] == A[j]) {
-                tam = A[i];
+            if (a[i] == a[j]) {
+                tam = a[i];
                 k++;
             }
         }
@@ -27,24 +27,24 @@ void tim(int A[], int n) {
         k = 1;
     }
 }
-void Sonam(int A[], int n, int value) {
+void Sonam(int a[], int n, int value) {
     for (int i = 0; i < n; i++) {
-        if (A[i] == value) {
+        if (a[i] == value) {
             cout << (1920 + i) << " ";
         }
     }
     cout << "voi " << value << " nguoi" << endl;
 }
-void Songuoi(int A[], int n) {
-    int max = A[0], min = A[0];
+void Songuoi(int a[], int n) {
+    int max = a[0], min = a[0];
     for (int i = 1; i < n; i++) {
-        if (A[i] > max) max = A[i];
-        if (A[i] < min) min = A[i];
+        if (a[i] > max) max = a[i];
+        if (a[i] < min) min = a[i];
     }
     cout << "Nam co so nguoi nhieu nhat :" << endl;
-    Sonam(A, n, max);
+    Sonam(a, n, max);
     cout << "Nam co so nguoi it nhat :" << endl;
-    Sonam(A, n, min);
+    Sonam(a, n, min);
 }
 int main() {
     int a[] = { 19, 77, 40, 90, 2, 25, 54, 17, 79, 6, 44, 24, 14, 4, 95, 47, 66,
