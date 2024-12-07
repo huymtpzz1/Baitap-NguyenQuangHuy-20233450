@@ -1,17 +1,22 @@
 ﻿#include <iostream>
-#include <string>
 using namespace std;
 
 struct Node {
-    string data;   
-    Node* left;    
-    Node* right;  
-    Node(string val) {
-        data = val;
+    char data[100];  
+    Node* left;  
+    Node* right;     
+    Node(const char* val) {
+        int i = 0;
+        while (val[i] != '\0' && i < 100) {
+            data[i] = val[i];
+            i++;
+        }
+        data[i] = '\0';
         left = nullptr;
         right = nullptr;
     }
 };
+
 bool EmptyTree(Node* root) {
     return root == nullptr;
 }
@@ -43,26 +48,26 @@ Node* Xaycay() {
 void LRN(Node* p) {
     if (p == nullptr) return;
     LRN(p->left);
-    LRN(p->right); 
-    cout << p->data << " ";  
+    LRN(p->right);
+    cout << p->data << " ";
 }
 
 void LNR(Node* p) {
     if (p == nullptr) return;
-    LNR(p->left); 
-    cout << p->data << " ";  
-    LNR(p->right); 
+    LNR(p->left);
+    cout << p->data << " ";
+    LNR(p->right);
 }
 
 void NLR(Node* p) {
     if (p == nullptr) return;
     cout << p->data << " ";
-    NLR(p->left);  
-    NLR(p->right); 
+    NLR(p->left);
+    NLR(p->right);
 }
 
 int main() {
-    Node* root = Xaycay();  
+    Node* root = Xaycay();
     cout << "Hau to: ";
     LRN(root);
     cout << endl;
@@ -73,4 +78,3 @@ int main() {
     NLR(root);
     cout << endl;
 }
-
